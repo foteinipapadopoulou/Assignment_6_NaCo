@@ -65,6 +65,9 @@ function setup(){
 }
 
 function draw(){
+	//print the position of each particle in the swarm into an html element
+	document.getElementById("output").innerHTML = Scene.swarm.map(p => `x: ${p.pos.x.toFixed(2)}, y: ${p.pos.y.toFixed(2)}`).join('<br>');
+	
 	background( 220 )
 	for( let p of Scene.swarm ){
 		p.step()
